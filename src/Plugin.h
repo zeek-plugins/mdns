@@ -1,6 +1,6 @@
 #pragma once
 
-#include <plugin/Plugin.h>
+#include <zeek/plugin/Plugin.h>
 
 namespace plugin {
 namespace IoT_mDNS {
