@@ -2,7 +2,6 @@
 
 #include "Plugin.h"
 #include "zeek/analyzer/Component.h"
-
 #include "mDNS.h"
 
 namespace plugin { namespace IoT_mDNS { Plugin plugin; } }
@@ -12,7 +11,7 @@ using namespace plugin::IoT_mDNS;
 zeek::plugin::Configuration Plugin::Configure()
 	{
 	AddComponent(new ::zeek::analyzer::Component("mDNS",
-	             ::analyzer::IoT_mDNS::mDNS_Analyzer::InstantiateAnalyzer));
+	             ::analyzer::IoT_mDNS::mDNS_Analyzer::Instantiate));
 
 	zeek::plugin::Configuration config;
 
