@@ -3,10 +3,7 @@
 #pragma once
 
 #include "events.bif.h"
-
-
-#include "zeek/analyzer/protocol/udp/UDP.h"
-
+#include "zeek/analyzer/protocol/dns/DNS.h"
 #include "mdns_pac.h"
 
 namespace analyzer { namespace IoT_mDNS {
