@@ -36,18 +36,18 @@ export {
 
 event zeek_init() &priority=5
 	{
-	Log::create_stream(Mdns::LOG, [$columns=Info, $ev=log_mdns, $path="mdns"]);
+	#Log::create_stream(Mdns::LOG, [$columns=Info, $ev=log_mdns, $path="mdns"]);
 
 	# TODO: If you're using port-based DPD, uncomment this.
 	# Analyzer::register_for_ports(Analyzer::ANALYZER_MDNS, ports);
 	}
 
-event mdns_event(c: connection)
-	{
-	local info: Info;
-	info$ts  = network_time();
-	info$uid = c$uid;
-	info$id  = c$id;
-
-	Log::write(Mdns::LOG, info);
-	}
+#event mdns_event(c: connection)
+#	{
+#	local info: Info;
+#	info$ts  = network_time();
+#	info$uid = c$uid;
+#	info$id  = c$id;
+#
+#	Log::write(Mdns::LOG, info);
+#	}

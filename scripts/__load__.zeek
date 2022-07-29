@@ -15,3 +15,5 @@
 # Note that often you may want your plugin's accompanying scripts not here, but
 # in scripts/IoT/mdns/__load__.zeek.
 # That's processed only on explicit `@load IoT/mdns`.
+
+@load ./IoT/mdns

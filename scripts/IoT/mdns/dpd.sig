@@ -3,16 +3,11 @@
 
 signature dpd_mdns {
 	
-	dst_ip == 224.0.0.251,[ff02::fb]
+	dst-ip == 224.0.0.251,[ff02::fb]
 	src-port == 5353
-	dst_port == 5353
+	dst-port == 5353
 	ip-proto == udp
 
-	# ## TODO: Define the payload. When Bro sees this regex, on
-	# ## any port, it will enable your analyzer on that
-	# ## connection.
-	# ## payload /^MDNS/
-
-	enable "mdns"
+	enable "mDNS"
 
 }
