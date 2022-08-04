@@ -14,4 +14,4 @@
 ##! need to do any other unconditional initialization, that should go into
 ##! __load__.zeek instead.
 
-@load ./types
+@load ./consts

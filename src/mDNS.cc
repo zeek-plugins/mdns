@@ -29,7 +29,7 @@ void mDNS_Analyzer::DeliverPacket(int len, const u_char* data,
 	 			                  bool orig, uint64_t seq,
 								  const zeek::IP_Hdr* ip, int caplen)
 	{
-	EnqueueConnEvent(mdns_event, ConnVal());
+	//EnqueueConnEvent(mdns_event, ConnVal());
 	dns_analyzer->DeliverPacket(len, data, orig, seq, ip, caplen);
 	}
 

@@ -1,7 +1,43 @@
-## Generated for mDNS connections
+module mDNS;
+
+## Generated for any mDNS message.
 ##
-## See `Google <http://lmgtfy.com/?q=mDNS>`__ for more information about mDNS
+## See `Wikipedia <https://en.wikipedia.org/wiki/Multicast_DNS>`__
+## and `RFC 6762 <https://datatracker.ietf.org/doc/html/rfc6762>`__
+## for more information about the mDNS protocol.
 ##
-## c: The connection
+## c:       The UDP connection carrying the mDNS message.
+## is_orig: True if the message was sent by the originator of the connection.
+## msg:     The parsed mDNS message header.
+## len:     The length of the message’s raw representation (i.e., the mDNS payload).
+## 
+event mdns_message%(c: connection, is_orig: bool, msg: dns_msg, len: count%);
+
+
+## Generated for mDNS requests.
 ##
-event mdns_event%(c: connection%);
+## See `Wikipedia <https://en.wikipedia.org/wiki/Multicast_DNS>`__
+## and `RFC 6762 <https://datatracker.ietf.org/doc/html/rfc6762>`__
+## for more information about the mDNS protocol.
+##
+## c:      The UDP connection carrying the mDNS message.
+## msg:    The parsed mDNS message header.
+## query: The queried name (normalized to all lowercase).
+## qtype:     The queried resource record type.
+## qclass: The queried resource record class.
+##
+event mdns_request%(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count%);
+
+
+## Generated for mDNS replies.
+##
+## See `Wikipedia <https://en.wikipedia.org/wiki/Multicast_DNS>`__
+## and `RFC 6762 <https://datatracker.ietf.org/doc/html/rfc6762>`__
+## for more information about the mDNS protocol.
+##
+## c:      The UDP connection carrying the mDNS message.
+## msg:    The parsed mDNS message header.
+## ans: The type-independent part of the parsed answer record.
+## a: The address returned by the reply.
+##
+event mdns_A_reply%(c: connection, msg: dns_msg, ans: dns_answer, a: addr%);
