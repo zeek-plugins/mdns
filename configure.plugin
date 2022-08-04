@@ -1,7 +1,6 @@
 #!/bin/sh
 #
 # Hooks to add custom options to the configure script.
-# Automated template updates will leave this file untouched.
 #
 
 plugin_usage()
@@ -24,9 +23,4 @@ plugin_option()
             return 1;
             ;;
     esac
-}
-
-plugin_addl()
-{
-    : # Do nothing
 }

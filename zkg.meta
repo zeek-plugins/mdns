@@ -1,18 +1,9 @@
 [package]
+description = Multicast DNS (mDNS) Protocol Analyzer for Zeek IDS for Zeek
 credits = François De Keersmaeker <francois.dekeersmaeker@uclouvain.be>
-tags = mdns, zeek, spicy, ids
-script_dir = scripts
-build_command = ./configure && cd build && make
-test_command = cd testing && btest -c btest.cfg
-summary = mDNS plugin for Zeek IDS
-description = A mDNS plugin for Zeek IDS
+tags = IDS, Zeek, mDNS
 
-[template]
-source = https://github.com/zeek/package-template
-version = v1.0.0
-zkg_version = 2.13.0
-features = plugin
+test_command = cd tests && make
 
-[template_vars]
-name = mDNS
-namespace = IoT
+build_command = ./configure && make
+script_dir = ./scripts

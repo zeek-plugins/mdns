@@ -1,0 +1,7 @@
+## Generated for mDNS connections
+##
+## See `Google <http://lmgtfy.com/?q=mDNS>`__ for more information about mDNS
+##
+## c: The connection
+##
+event mdns_event%(c: connection%);
