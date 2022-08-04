@@ -18,6 +18,7 @@ build-it:
 
 install:
 	( cd $(cmake_build_dir) && make install )
+	export ZEEK_PLUGIN_PATH="$ZEEK_PLUGIN_PATH:$(pwd)"
 
 clean:
 	( cd $(cmake_build_dir) && make clean )
