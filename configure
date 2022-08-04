@@ -3,7 +3,8 @@
 # Wrapper for viewing/setting options that the plugin's CMake
 # scripts will recognize.
 #
-# Don't edit this. Edit configure.plugin to add plugin-specific options.
+# This file is maintained by zkg. Do not edit.
+# Modify configure.plugin to add plugin-specific options.
 #
 
 set -e
@@ -129,7 +130,6 @@ fi
 if [ -z "$zeekdist" ]; then
     if type zeek-config >/dev/null 2>&1; then
         zeek_config="zeek-config"
-        zeekdist=`${zeek_config} --zeek_dist`
     else
         echo "Either 'zeek-config' must be in PATH or '--zeek-dist=<path>' used"
         exit 1
@@ -138,6 +138,7 @@ if [ -z "$zeekdist" ]; then
     append_cache_entry BRO_CONFIG_PREFIX PATH `${zeek_config} --prefix`
     append_cache_entry BRO_CONFIG_INCLUDE_DIR PATH `${zeek_config} --include_dir`
     append_cache_entry BRO_CONFIG_PLUGIN_DIR PATH `${zeek_config} --plugin_dir`
+    append_cache_entry BRO_CONFIG_LIB_DIR PATH `${zeek_config} --lib_dir`
     append_cache_entry BRO_CONFIG_CMAKE_DIR PATH `${zeek_config} --cmake_dir`
     append_cache_entry CMAKE_MODULE_PATH PATH `${zeek_config} --cmake_dir`
 
@@ -176,7 +177,11 @@ if [ "$installroot" != "default" ]; then
     append_cache_entry BRO_PLUGIN_INSTALL_ROOT PATH $installroot
 fi
 
-echo "Build Directory        : $builddir"
+if type plugin_addl >/dev/null 2>&1; then
+    plugin_addl
+fi
+
+echo "Build Directory         : $builddir"
 echo "Zeek Source Directory   : $zeekdist"
 
 mkdir -p $builddir
