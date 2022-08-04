@@ -16,4 +16,4 @@
 # in scripts/IoT/mdns/__load__.zeek.
 # That's processed only on explicit `@load IoT/mdns`.
 
-@load ./IoT/mdns
+@load-sigs ./dpd.sig
