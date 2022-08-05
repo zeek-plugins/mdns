@@ -1,8 +1,6 @@
 ##! Events issued by the mDNS plugin,
 ##! based on the built-in DNS events.
 
-module mDNS;
-
 
 ########## FUNCTIONS ##########
 
@@ -11,9 +9,9 @@ module mDNS;
 # :return: T if the connection is used for mDNS, F otherwise
 function is_mdns(c: connection): bool
     {
-    return (c$id$resp_h in mdns_addrs &&
-           c$id$orig_p == mdns_port &&
-           c$id$resp_p == mdns_port);
+    return (c$id$resp_h in mDNS::mdns_addrs &&
+           c$id$orig_p == mDNS::mdns_port &&
+           c$id$resp_p == mDNS::mdns_port);
     }
 
 
