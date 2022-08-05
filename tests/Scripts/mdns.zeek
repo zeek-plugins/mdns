@@ -12,10 +12,9 @@ event zeek_init()
     print "########## XIAOMI mDNS TEST START ##########";
     }
 
-event mdns_message(c: connection, is_orig: bool, msg: dns_msg, len: count)
+event mdns_A_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr)
     {
-    print fmt("%d. %s:%s -> %s:%s", mdns_count, c$id$orig_h, c$id$orig_p, c$id$resp_h, c$id$resp_p);
-    mdns_count += 1;
+    print "A reply", ans;
     }
 
 # FINISH
