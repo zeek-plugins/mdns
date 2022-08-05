@@ -7,10 +7,8 @@ include(ZeekPlugin)
 
 zeek_plugin_begin(IoT mDNS)
 zeek_plugin_cc(src/Plugin.cc)
-zeek_plugin_cc(src/mDNS.cc)
 zeek_plugin_bif(src/events.bif)
 zeek_plugin_dist_files(README.rst COPYING contributors VERSION)
-#zeek_plugin_pac(src/mdns.pac src/mdns-analyzer.pac src/mdns-protocol.pac)
 zeek_plugin_end()
 
 file(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/VERSION" VERSION LIMIT_COUNT 1)

@@ -11,9 +11,9 @@ module mDNS;
 # :returns: true if the connection is used for mDNS, false otherwise
 function is_mdns(c: connection): bool
     {
-    return c$id$resp_h in mdns_addrs &&
+    return (c$id$resp_h in mdns_addrs &&
            c$id$orig_p == mdns_port &&
-           c$id$resp_p == mdns_port;
+           c$id$resp_p == mdns_port);
     }
 
 

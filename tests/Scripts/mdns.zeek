@@ -1,3 +1,4 @@
+@load /home/fdekeers/UCL/Doctorat/Tools/zeek/mdns/scripts
 ########## VARIABLES ##########
 
 global dns_count:  count = 1;

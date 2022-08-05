@@ -1,6 +1,7 @@
 #pragma once
 
 #include <zeek/plugin/Plugin.h>
+#include "events.bif.h"
 
 namespace plugin {
 namespace IoT_mDNS {
