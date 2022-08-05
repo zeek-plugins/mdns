@@ -62,6 +62,7 @@ Contributors
 
 
 * François De Keersmaeker
+  
   * GitHub: `@fdekeers <https://github.com/fdekeers>`_
   * Email: francois.dekeersmaeker@uclouvain.be
 
