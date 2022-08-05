@@ -6,46 +6,32 @@ module mDNS;
 export {
 	redef enum Log::ID += { LOG };
 
-	type Info: record {
-		## Timestamp for when the event happened.
-		ts:     time    &log;
-		## Unique ID for the connection.
-		uid:    string  &log;
-		## The connection's 4-tuple of endpoint addresses/ports.
-		id:     conn_id &log;
-		
-		# ## TODO: Add other fields here that you'd like to log.
+	type MdnsLog: record {
+		timestamp: time &log;  # Timestamp
+		uid:       string  &log;  # Connection unique ID
+		id:        conn_id &log;  # Connection 4-tuple of endpoint addresses/ports.
 	};
 
 	## Event that can be handled to access the mDNS record as it is sent on
 	## to the loggin framework.
-	global log_mdns: event(rec: Info);
+	global log_mdns: event(rec: MdnsLog);
 }
 
-# TODO: The recommended method to do dynamic protocol detection
-# (DPD) is with the signatures in dpd.sig. If you can't come up
-# with any signatures, then you can do port-based detection by
-# uncommenting the following and specifying the port(s):
 
-# const ports = { 1234/udp, 5678/udp };
+########## EVENTS ##########
 
-
-# redef likely_server_ports += { ports };
-
+# Triggered when the module is loaded.
+# Creates the mDNS log stream.
 event zeek_init() &priority=5
 	{
-	#Log::create_stream(mDNS::LOG, [$columns=Info, $ev=log_mdns, $path="mdns"]);
-
-	# TODO: If you're using port-based DPD, uncomment this.
-	# Analyzer::register_for_ports(Analyzer::ANALYZER_MDNS, ports);
+	Log::create_stream(mDNS::LOG, [$columns=MdnsLog, $ev=log_mdns, $path="mdns"]);
 	}
 
-#event mdns_event(c: connection)
-#	{
-#	local info: Info;
-#	info$ts  = network_time();
-#	info$uid = c$uid;
-#	info$id  = c$id;
-#
-#	Log::write(mDNS::LOG, info);
-#	}
+event mdns_message(c: connection, is_orig: bool, msg: dns_msg, len: count)
+	{
+	Log::write(mDNS::LOG, MdnsLog(
+		$timestamp = network_time(),
+		$uid = c$uid,
+		$id  = c$id
+	));
+	}
