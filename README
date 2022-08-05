@@ -1,9 +1,6 @@
 Multicast DNS (mDNS) package for Zeek IDS
 ================================================
 
-.. image:: https://img.shields.io/github/license/fdekeers/mdns)
-   :target: :doc:`COPYING <./COPYING>`
-   :alt: BSD license
 
 This repository contains a [Zeek](https://zeek.org/) package for the [Multicast DNS (mDNS) protocol](https://en.wikipedia.org/wiki/Multicast_DNS).
 The package can be easily installed with [Zeek Package Manager](https://docs.zeek.org/projects/package-manager/en/stable/).
