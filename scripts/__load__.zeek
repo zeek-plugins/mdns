@@ -17,4 +17,5 @@
 # That's processed only on explicit `@load IoT/mdns`.
 
 @load base/protocols/dns
+@load ./consts
 @load ./events

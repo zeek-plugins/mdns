@@ -1,10 +1,11 @@
 # @TEST-DOC: Tests the mDNS plugin on a PCAP file, and verify output.
-# @TEST-EXEC: zeek -b ${PACKAGE} %INPUT -r ${TRACES}/mdns-only.pcap > run_pcap.out
-# @TEST-EXEC: btest diff run_pcap.out
+# @TEST-EXEC: zeek -b ${PACKAGE} %INPUT -r ${TRACES}/mdns-only.pcap > mdns_only.out
+# @TEST-EXEC: btest diff mdns_only.out
+# @TEST-EXEC: zeek -b ${PACKAGE} %INPUT -r ${TRACES}/trace.pcap > trace.out
+# @TEST-EXEC: btest diff trace.out
 # @TEST-EXEC: btest diff mdns.log
 
-# Import mDNS plugin
-@load-plugin IoT::mDNS
+# Import mDNS plugin scipts
 @load IoT/mdns
 
 
