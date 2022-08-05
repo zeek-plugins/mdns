@@ -1,5 +1,5 @@
 [package]
-description = Multicast DNS (mDNS) Protocol Analyzer for Zeek IDS for Zeek
+description = Multicast DNS (mDNS) package for Zeek
 credits = François De Keersmaeker <francois.dekeersmaeker@uclouvain.be>
 tags = IDS, Zeek, mDNS
 
