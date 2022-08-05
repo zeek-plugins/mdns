@@ -1,5 +1,3 @@
-module mDNS;
-
 ## Generated for any mDNS message.
 ##
 ## See `Wikipedia <https://en.wikipedia.org/wiki/Multicast_DNS>`__
