@@ -1,81 +1,73 @@
-Zeek Package for Multicast DNS (mDNS) Protocol Analyzer for Zeek IDS
+Multicast DNS (mDNS) package for Zeek IDS
 ================================================
-
-.. image:: https://travis-ci.com/fdekeers/mdns.svg?branch=master
-   :target: https://travis-ci.com/fdekeers/mdns
-   :alt: Build Status
-
-.. image:: https://coveralls.io/repos/github/fdekeers/mdns/badge.svg?branch=master
-   :target: https://coveralls.io/repos/github/fdekeers/mdns?branch=master
-   :alt: Coverage Status
-
 
 .. image:: https://img.shields.io/github/license/fdekeers/mdns)
    :target: :doc:`COPYING <./COPYING>`
    :alt: BSD license
 
+This repository contains a [Zeek](https://zeek.org/) package for the [Multicast DNS (mDNS) protocol](https://en.wikipedia.org/wiki/Multicast_DNS).
+The package can be easily installed with [Zeek Package Manager](https://docs.zeek.org/projects/package-manager/en/stable/).
 
-![GitHub](
+Please consult the following RFCs for additional information about the Multicast DNS protocol:
+- DNS: [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035)
+- Multicast DNS: [RFC 6762](https://datatracker.ietf.org/doc/html/rfc6762)
 
-Multicast DNS (mDNS) Protocol Analyzer for Zeek IDS for Zeek
-
-Getting Started
----------------
-
-These instructions will get you a copy of the package up and running on your Zeek cluster. See development for notes on how to install the package in order to hack on or contribute to it.
 
 Prerequisites
 -------------
 
-This is a package designed to run with the [Zeek Network Security Monitor](https://zeek.org). First, [get Zeek](https://zeek.org/get-zeek/). We strive to support both the current feature and LTS releases.
+Before trying to install the package, make sure you have the following tools installed:
 
-The recommended installation method is via the [Zeek package manager, zkg](https://docs.zeek.org/projects/package-manager/en/stable/). On any recent system, run `pip install zkg`. After installation, run `zkg autoconfig`. For more information, see the [zkg documentation](https://docs.zeek.org/projects/package-manager/en/stable/quickstart.html).
+- [Zeek](https://zeek.org/)
+- [Zeek Package Manager](https://docs.zeek.org/projects/package-manager/en/stable/) command `zkg`
+- [Spicy plugin](https://docs.zeek.org/projects/spicy/en/latest/index.html) for Zeek
 
-Installing
+Everything should be installed correctly if you install the latest [Zeek](https://zeek.org/) version.
+
+
+Installation
 ----------
 
-To install the package, run:
+To run unit tests and install the package, run:
 
-```
-zkg install https://github.com/fdekeers/mdns
-```
-
-If this is being installed on a cluster, install the package on the manager, then deploy it via: 
-
-```
-zeekctl deploy
+```shell
+zkg install https://github.com/zeek-plugins/mdns  # to install as super user
+zkg --user install https://github.com/zeek-plugins/mdns  # to install in user space
 ```
 
-Running the tests
------------------
+You might have to update the `ZEEKPATH` and `ZEEK_PLUGIN_PATH` environmental variables.
+To see which value they should take, run the following commands:
+```shell
+zkg env         # For the super user
+zkg --user env  # For a normal user
+```
 
-`zkg` will run the test suite before installing. To manually run the tests, go into the `tests` directory, and run `make`.
+To confirm that installation was successful, you can run the following command:
+```shell
+zeek -NN | grep mDNS
+```
 
-Contributing
-------------
+If the command's output shows something similar to:
+```
+IoT::mDNS - Multicast DNS (mDNS) package for Zeek (dynamic, version 1.0.0)
+```
+the package was correctly installed, and you have access to the mDNS package.
 
-Please read [CONTRIBUTING.md](./docs/CONTRIBUTING.md) for details on how to contribute.
+In the case of any installation problems, please check the [Zeek Package Manager](https://docs.zeek.org/projects/package-manager/en/stable/) documentation.
 
-Versioning
-----------
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](../../tags). 
-
-Credits
--------
-
-
-* François De Keersmaeker <francois.dekeersmaeker@uclouvain.be>
-
-
-See also the list of [contributors](contributors) who participated in this project.
 
 License
 -------
 
 This project is licensed under the BSD license. See the [COPYING](COPYING) file for details.
 
-Acknowledgments
----------------
 
-* ESnet team for Zeek Package Cookie Cutter
+Contributors
+------------
+
+
+- François De Keersmaeker
+  - GitHub: [@fdekeers](https://github.com/fdekeers)
+  - Email: francois.dekeersmaeker@uclouvain.be
+
+Thanks to the ESnet team for [Zeek Package Cookie Cutter](https://github.com/esnet/cookiecutter-zeekpackage).
