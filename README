@@ -31,8 +31,8 @@ Installation
 To run unit tests and install the package, run:
 
 ```shell
-zkg install https://github.com/zeek-plugins/igmp  # to install as super user
-zkg --user install https://github.com/zeek-plugins/igmp  # to install in user space
+zkg install https://github.com/zeek-plugins/mdns  # to install as super user
+zkg --user install https://github.com/zeek-plugins/mdns  # to install in user space
 ```
 
 You might have to update the `ZEEKPATH` and `ZEEK_PLUGIN_PATH` environmental variables.
