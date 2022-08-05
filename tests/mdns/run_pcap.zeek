@@ -1,8 +1,5 @@
-########## VARIABLES ##########
-
-global dns_count:  count = 1;
-global mdns_count: count = 1;
-
+# @TEST-DOC: Tests the mDNS plugin on a PCAP file, and verify output.
+# @TEST-EXEC: zeek -b ${PLUGIN} %INPUT -r ${TRACES}/mdns-only.pcap
 
 ########## EVENTS ##########
 
