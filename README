@@ -16,7 +16,7 @@ Prerequisites
 Before trying to install the package, make sure you have the following tools installed:
 
 - `Zeek <https://zeek.org/>`_
-- `Zeek Package Manager <https://docs.zeek.org/projects/package-manager/en/stable/>`_ command `zkg`
+- `Zeek Package Manager <https://docs.zeek.org/projects/package-manager/en/stable/>`_ command :code:`zkg`
 
 Everything should be installed correctly if you install the latest `Zeek <https://zeek.org/>`_ version.
 
@@ -25,28 +25,31 @@ Installation
 ----------
 
 To run unit tests and install the package, run:
+.. code-block:: bash
 
-``
-zkg install https://github.com/zeek-plugins/mdns  # to install as super user
-zkg --user install https://github.com/zeek-plugins/mdns  # to install in user space
-``
+      zkg install https://github.com/zeek-plugins/mdns  # to install as super user
+      zkg --user install https://github.com/zeek-plugins/mdns  # to install in user space
+
 
 You might have to update the `ZEEKPATH` and `ZEEK_PLUGIN_PATH` environmental variables.
 To see which value they should take, run the following commands:
-``
-zkg env         # For the super user
-zkg --user env  # For a normal user
-``
+.. code-block:: bash
+
+      zkg env         # For the super user
+      zkg --user env  # For a normal user
+
 
 To confirm that installation was successful, you can run the following command:
-``
-zeek -NN | grep mDNS
-``
+.. code-block:: bash
+
+      zeek -NN | grep mDNS
+
 
 If the command's output shows something similar to:
-``
-IoT::mDNS - Multicast DNS (mDNS) package for Zeek (dynamic, version 1.0.0)
-``
+.. code-block:: bash
+
+      IoT::mDNS - Multicast DNS (mDNS) package for Zeek (dynamic, version 1.0.0)
+
 the package was correctly installed, and you have access to the mDNS package.
 
 In the case of any installation problems, please check the `Zeek Package Manager <https://docs.zeek.org/projects/package-manager/en/stable/>`_ documentation.
