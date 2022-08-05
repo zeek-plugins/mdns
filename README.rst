@@ -61,8 +61,8 @@ Contributors
 ------------
 
 
-- François De Keersmaeker
-  - GitHub: `@fdekeers <https://github.com/fdekeers>`_
-  - Email: francois.dekeersmaeker@uclouvain.be
+* François De Keersmaeker
+  * GitHub: `@fdekeers <https://github.com/fdekeers>`_
+  * Email: francois.dekeersmaeker@uclouvain.be
 
 Thanks to the ESnet team for `Zeek Package Cookie Cutter <https://github.com/esnet/cookiecutter-zeekpackage>`_.
