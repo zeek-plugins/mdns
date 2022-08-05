@@ -25,7 +25,7 @@ Installation
 ----------
 
 To run unit tests and install the package, run:
-.. code-block:: bash
+.. code:: bash
 
       zkg install https://github.com/zeek-plugins/mdns  # to install as super user
       zkg --user install https://github.com/zeek-plugins/mdns  # to install in user space
@@ -33,20 +33,20 @@ To run unit tests and install the package, run:
 
 You might have to update the `ZEEKPATH` and `ZEEK_PLUGIN_PATH` environmental variables.
 To see which value they should take, run the following commands:
-.. code-block:: bash
+.. code:: bash
 
       zkg env         # For the super user
       zkg --user env  # For a normal user
 
 
 To confirm that installation was successful, you can run the following command:
-.. code-block:: bash
+.. code:: bash
 
       zeek -NN | grep mDNS
 
 
 If the command's output shows something similar to:
-.. code-block:: bash
+.. code:: bash
 
       IoT::mDNS - Multicast DNS (mDNS) package for Zeek (dynamic, version 1.0.0)
 
