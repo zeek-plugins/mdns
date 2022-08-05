@@ -1,0 +1,72 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	mdns
+#open	2022-08-05-15-11-17
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	trans_id	rtt	query	qclass	qclass_name	qtype	qtype_name	rcode	rcode_name	AA	TC	RD	RA	Z	answers	TTLs	rejected
+#types	time	string	addr	port	addr	port	enum	count	interval	string	count	string	count	string	count	string	bool	bool	bool	bool	count	vector[string]	vector[interval]	bool
+1648641939.779327	CPGHTQ2oJiWIwXexI2	fddd:ed18:f05b:0:54d1:338c:9802:7ad9	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648641939.779533	CaJ5Ps72Hv3s8rR2i	192.168.1.144	5353	224.0.0.251	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642108.308342	CIZblE3y15VFunQFY4	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.b.5.0.f.8.1.d.e.d.d.d.f.ip6.arpa	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642108.308366	CIZblE3y15VFunQFY4	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.b.5.0.f.8.1.d.e.d.d.d.f.ip6.arpa	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642108.559371	CIZblE3y15VFunQFY4	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.b.5.0.f.8.1.d.e.d.d.d.f.ip6.arpa	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642108.559398	CIZblE3y15VFunQFY4	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.b.5.0.f.8.1.d.e.d.d.d.f.ip6.arpa	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642108.812797	CIZblE3y15VFunQFY4	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.b.5.0.f.8.1.d.e.d.d.d.f.ip6.arpa	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642108.812818	CIZblE3y15VFunQFY4	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.b.5.0.f.8.1.d.e.d.d.d.f.ip6.arpa	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642183.278134	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	_hue._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642183.278161	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	_hue._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642183.278347	CXqWlj1Nw9Aazwx6T9	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	_hue._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642183.278361	CXqWlj1Nw9Aazwx6T9	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	_hue._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642183.538979	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	android.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642183.538999	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	android.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642183.539164	CXqWlj1Nw9Aazwx6T9	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	android.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642183.539178	CXqWlj1Nw9Aazwx6T9	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	android.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642183.789710	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	android.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642183.789731	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	android.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642183.789886	CXqWlj1Nw9Aazwx6T9	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	android.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642183.789900	CXqWlj1Nw9Aazwx6T9	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	android.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642184.041634	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	android.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642184.041666	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	android.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642184.041855	CXqWlj1Nw9Aazwx6T9	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	android.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642184.041870	CXqWlj1Nw9Aazwx6T9	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	android.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642184.280028	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	_hue._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642184.280061	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	_hue._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642184.280256	CXqWlj1Nw9Aazwx6T9	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	_hue._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642184.280270	CXqWlj1Nw9Aazwx6T9	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	_hue._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642184.439475	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.b.5.0.f.8.1.d.e.d.d.d.f.ip6.arpa	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642184.439508	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.b.5.0.f.8.1.d.e.d.d.d.f.ip6.arpa	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642184.690105	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.b.5.0.f.8.1.d.e.d.d.d.f.ip6.arpa	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642184.690123	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.b.5.0.f.8.1.d.e.d.d.d.f.ip6.arpa	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642184.943623	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.b.5.0.f.8.1.d.e.d.d.d.f.ip6.arpa	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642184.943667	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.b.5.0.f.8.1.d.e.d.d.d.f.ip6.arpa	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642187.286986	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	_hue._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642187.287019	CXGl0V3s4S1w3TTiF3	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	_hue._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642187.287196	CXqWlj1Nw9Aazwx6T9	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	_hue._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642187.287208	CXqWlj1Nw9Aazwx6T9	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	_hue._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642199.393227	CkqCAXphS8JSvMSy	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa	-	-	-	-	0	NOERROR	T	F	F	F	0	android.local,192.168.1.150,fddd:ed18:f05b:0:52dc:e7ff:fea2:d895,fddd:ed18:f05b:0:c9f4:293b:137b:818d,fe80::52dc:e7ff:fea2:d895	120.000000,120.000000,120.000000,120.000000,120.000000	F
+1648642199.393266	CkqCAXphS8JSvMSy	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa	-	-	-	-	0	NOERROR	T	F	F	F	0	android.local,192.168.1.150,fddd:ed18:f05b:0:52dc:e7ff:fea2:d895,fddd:ed18:f05b:0:c9f4:293b:137b:818d,fe80::52dc:e7ff:fea2:d895	120.000000,120.000000,120.000000,120.000000,120.000000	F
+1648642199.393468	CUCzwi4lcaZBVOLsGe	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa	-	-	-	-	0	NOERROR	T	F	F	F	0	android.local,192.168.1.150,fddd:ed18:f05b:0:52dc:e7ff:fea2:d895,fddd:ed18:f05b:0:c9f4:293b:137b:818d,fe80::52dc:e7ff:fea2:d895	120.000000,120.000000,120.000000,120.000000,120.000000	F
+1648642199.393482	CUCzwi4lcaZBVOLsGe	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa	-	-	-	-	0	NOERROR	T	F	F	F	0	android.local,192.168.1.150,fddd:ed18:f05b:0:52dc:e7ff:fea2:d895,fddd:ed18:f05b:0:c9f4:293b:137b:818d,fe80::52dc:e7ff:fea2:d895	120.000000,120.000000,120.000000,120.000000,120.000000	F
+1648642220.898902	CBnqxw38LCu4qlFTxf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	huawei_p20_lite-c31cdd297-lan.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642221.905352	CBnqxw38LCu4qlFTxf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	huawei_p20_lite-c31cdd297-lan.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642247.411936	CNuRdP2ZZgA0AJHqgc	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa	-	-	-	-	0	NOERROR	T	F	F	F	0	android.local,192.168.1.150,fddd:ed18:f05b:0:52dc:e7ff:fea2:d895,fddd:ed18:f05b:0:c9f4:293b:137b:818d,fe80::52dc:e7ff:fea2:d895	120.000000,120.000000,120.000000,120.000000,120.000000	F
+1648642247.411964	CNuRdP2ZZgA0AJHqgc	192.168.1.150	5353	224.0.0.251	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa	-	-	-	-	0	NOERROR	T	F	F	F	0	android.local,192.168.1.150,fddd:ed18:f05b:0:52dc:e7ff:fea2:d895,fddd:ed18:f05b:0:c9f4:293b:137b:818d,fe80::52dc:e7ff:fea2:d895	120.000000,120.000000,120.000000,120.000000,120.000000	F
+1648642247.412137	Chi1Mx1ZTLkYX22Ckk	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa	-	-	-	-	0	NOERROR	T	F	F	F	0	android.local,192.168.1.150,fddd:ed18:f05b:0:52dc:e7ff:fea2:d895,fddd:ed18:f05b:0:c9f4:293b:137b:818d,fe80::52dc:e7ff:fea2:d895	120.000000,120.000000,120.000000,120.000000,120.000000	F
+1648642247.412152	Chi1Mx1ZTLkYX22Ckk	fe80::52dc:e7ff:fea2:d895	5353	ff02::fb	5353	udp	0	-	5.9.8.d.2.a.e.f.f.f.7.e.c.d.2.5.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa	-	-	-	-	0	NOERROR	T	F	F	F	0	android.local,192.168.1.150,fddd:ed18:f05b:0:52dc:e7ff:fea2:d895,fddd:ed18:f05b:0:c9f4:293b:137b:818d,fe80::52dc:e7ff:fea2:d895	120.000000,120.000000,120.000000,120.000000,120.000000	F
+1648642258.719702	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	_miio._udp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642258.720542	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	_rc._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642258.721459	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	_rc._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642258.723727	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	_miio._udp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642258.945848	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	_miio._udp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642258.946313	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	_rc._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642258.947273	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	_rc._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642258.948773	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	_miio._udp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642259.176403	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	_miio._udp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642259.176923	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	_rc._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642259.177719	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	_rc._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642259.177828	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	_miio._udp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F
+1648642259.492783	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	huawei_p20_lite-c31cdd297-lan.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642260.492791	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	huawei_p20_lite-c31cdd297-lan.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+1648642261.492741	CcOr0R2fq67VxYLzHf	192.168.1.222	5353	224.0.0.251	5353	udp	0	-	huawei_p20_lite-c31cdd297-lan.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F
+#close	2022-08-05-15-11-17

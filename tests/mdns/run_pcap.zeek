@@ -1,21 +1,34 @@
 # @TEST-DOC: Tests the mDNS plugin on a PCAP file, and verify output.
-# @TEST-EXEC: zeek -b ${PLUGIN} %INPUT -r ${TRACES}/mdns-only.pcap
+# @TEST-EXEC: zeek -b ${PACKAGE} %INPUT -r ${TRACES}/mdns-only.pcap > run_pcap.out
+# @TEST-EXEC: btest diff run_pcap.out
+# @TEST-EXEC: btest diff mdns.log
+
+# Import mDNS plugin
+@load-plugin IoT::mDNS
+@load IoT/mdns
+
+
+# Count of mDNS messages
+global mdns_count: count = 1;
+
 
 ########## EVENTS ##########
 
 # START
 event zeek_init()
     {
-    print "########## XIAOMI mDNS TEST START ##########";
+    print "########## mDNS PLUGIN TEST START ##########";
     }
 
+# Triggered by each mDNS message
 event mdns_message(c: connection, is_orig: bool, msg: dns_msg, len: count)
     {
-    ;
+    print fmt("%d. %s:%s -> %s:%s", mdns_count, c$id$orig_h, c$id$orig_p, c$id$resp_h, c$id$resp_p);
+    mdns_count += 1;
     }
 
 # FINISH
 event zeek_done()
     {
-    print "########## XIAOMI mDNS TEST STOP ##########";
+    print "########## mDNS PLUGIN TEST STOP ##########";
     }
