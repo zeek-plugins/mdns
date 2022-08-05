@@ -13,11 +13,8 @@ Please consult the following RFCs for additional information about the Multicast
 - Multicast DNS: [RFC 6762](https://datatracker.ietf.org/doc/html/rfc6762)
 
 
-Installation
-------------
-
 Prerequisites
-^^^^^^^^^^^^^
+-------------
 
 Before trying to install the package, make sure you have the following tools installed:
 
@@ -28,7 +25,7 @@ Before trying to install the package, make sure you have the following tools ins
 Everything should be installed correctly if you install the latest [Zeek](https://zeek.org/) version.
 
 
-Installing
+Installation
 ----------
 
 To install the package, run:
@@ -52,7 +49,7 @@ zeek -NN | grep mDNS
 
 If the command's output shows something similar to:
 ```
-[Packet Analyzer] Spicy::IGMP (ANALYZER_SPICY__IGMP)
+IoT::mDNS - Multicast DNS (mDNS) Protocol Analyzer for Zeek IDS (dynamic, version 0.1.0)
 ```
 the package was correctly installed, and you have access to the IGMP packet analyzer.
 
