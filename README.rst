@@ -1,7 +1,7 @@
 Multicast DNS (mDNS) package for Zeek IDS
 ================================================
 
-.. image:: https://img.shields.io/github/license/fdekeers/mdns)
+.. image:: https://img.shields.io/github/license/zeek-plugins/mdns)
    :target: :doc:`COPYING <./COPYING>`
    :alt: BSD license
 
