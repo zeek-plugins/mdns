@@ -1,4 +1,4 @@
-* Multicast DNS (mDNS) Protocol Analyzer for Zeek IDS version:
+* mDNS package version:
 * Zeek version:
 * Operating System:
 
