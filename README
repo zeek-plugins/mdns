@@ -67,83 +67,83 @@ Events
 
 The plugin defines the following events:
 
-* :code: event mdns_message(c: connection, is_orig: bool, msg: dns_msg, len: count)
+* ``event mdns_message(c: connection, is_orig: bool, msg: dns_msg, len: count)``
 
   * Generated for any mDNS message.
 
-* :code: event mdns_request(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count, original_query: string)
+* ``event mdns_request(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count, original_query: string)``
 
   * Generated for mDNS requests.
 
-* :code: event mdns_rejected(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count, original_query: string)
+* ``event mdns_rejected(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count, original_query: string)``
 
   * Generated for mDNS replies that reject a query.
 
-* :code: event mdns_query_reply(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count, original_query: string)
+* ``event mdns_query_reply(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count, original_query: string)``
 
   * Generated for each entry in the Question section of a mDNS reply.
 
-* :code: event mdns_A_reply (c: connection, msg: dns_msg, ans: dns_answer, a: addr)
+* ``event mdns_A_reply (c: connection, msg: dns_msg, ans: dns_answer, a: addr)``
 
   * Generated for mDNS replies of type *A*.
 
-* :code: event mdns_AAAA_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr)
+* ``event mdns_AAAA_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr)``
 
   * Generated for mDNS replies of type *AAAA*.
 
-* :code: event mdns_A6_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr)
+* ``event mdns_A6_reply(c: connection, msg: dns_msg, ans: dns_answer, a: addr)``
 
   * Generated for mDNS replies of type *A6*.
 
-* :code: event mdns_NS_reply(c: connection, msg: dns_msg, ans: dns_answer, name: string)
+* ``event mdns_NS_reply(c: connection, msg: dns_msg, ans: dns_answer, name: string)``
 
   * Generated for mDNS replies of type *NS*.
 
-* :code: event mdns_CNAME_reply(c: connection, msg: dns_msg, ans: dns_answer, name: string)
+* ``event mdns_CNAME_reply(c: connection, msg: dns_msg, ans: dns_answer, name: string)``
 
   * Generated for mDNS replies of type *CNAME*.
 
-* :code: event mdns_PTR_reply(c: connection, msg: dns_msg, ans: dns_answer, name: string)
+* ``event mdns_PTR_reply(c: connection, msg: dns_msg, ans: dns_answer, name: string)``
 
   * Generated for mDNS replies of type *PTR*.
 
-* :code: event mdns_SOA_reply(c: connection, msg: dns_msg, ans: dns_answer, soa: dns_soa)
+* ``event mdns_SOA_reply(c: connection, msg: dns_msg, ans: dns_answer, soa: dns_soa)``
 
   * Generated for mDNS replies of type *CNAME*
 
-* :code: event mdns_WKS_reply(c: connection, msg: dns_msg, ans: dns_answer)
+* ``event mdns_WKS_reply(c: connection, msg: dns_msg, ans: dns_answer)``
 
   * Generated for mDNS replies of type *WKS*.
 
-* :code: event mdns_HINFO_reply(c: connection, msg: dns_msg, ans: dns_answer, cpu: string, os: string)
+* ``event mdns_HINFO_reply(c: connection, msg: dns_msg, ans: dns_answer, cpu: string, os: string)``
 
   * Generated for mDNS replies of type *HINFO*.
 
-* :code: event mdns_MX_reply(c: connection, msg: dns_msg, ans: dns_answer, name: string, preference: count)
+* ``event mdns_MX_reply(c: connection, msg: dns_msg, ans: dns_answer, name: string, preference: count)``
 
   * Generated for mDNS replies of type *MX*.
 
-* :code: event mdns_TXT_reply(c: connection, msg: dns_msg, ans: dns_answer, strs: string_vec)
+* ``event mdns_TXT_reply(c: connection, msg: dns_msg, ans: dns_answer, strs: string_vec)``
 
   * Generated for mDNS replies of type *TXT*.
 
-* :code: event mdns_SPF_reply(c: connection, msg: dns_msg, ans: dns_answer, strs: string_vec)
+* ``event mdns_SPF_reply(c: connection, msg: dns_msg, ans: dns_answer, strs: string_vec)``
 
   * Generated for mDNS replies of type *SPF*.
 
-* :code: event mdns_CAA_reply(c: connection, msg: dns_msg, ans: dns_answer, flags: count, tag: string, value: string)
+* ``event mdns_CAA_reply(c: connection, msg: dns_msg, ans: dns_answer, flags: count, tag: string, value: string)``
 
   * Generated for mDNS replies of type *CAA* (Certification Authority Authorization).
 
-* :code: event mdns_SRV_reply(c: connection, msg: dns_msg, ans: dns_answer, target: string, priority: count, weight: count, p: count)
+* ``event mdns_SRV_reply(c: connection, msg: dns_msg, ans: dns_answer, target: string, priority: count, weight: count, p: count)``
 
   * Generated for mDNS replies of type *SRV*.
 
-* :code: event mdns_unknown_reply(c: connection, msg: dns_msg, ans: dns_answer)
+* ``event mdns_unknown_reply(c: connection, msg: dns_msg, ans: dns_answer)``
 
   * Generated for mDNS reply resource records when the type of record is not one that Zeek knows how to parse and generate another more specific event.
 
-* :code: event mdns_end(c: connection, msg: dns_msg)
+* ``event mdns_end(c: connection, msg: dns_msg)``
 
   * Generated at the end of processing a mDNS packet. This event is the last ``mdns_*`` event that will be raised for a mDNS query/reply and signals that all resource records have been passed on.
 
