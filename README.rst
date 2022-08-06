@@ -67,7 +67,7 @@ Events
 
 The plugin defines the following events:
 
-* :code: event mdns_message(c: connection, is_orig: bool, msg: dns_msg, len: count)
+* ``event mdns_message(c: connection, is_orig: bool, msg: dns_msg, len: count)``
 
   * Generated for any mDNS message.
 
