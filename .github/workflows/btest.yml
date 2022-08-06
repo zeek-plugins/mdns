@@ -39,18 +39,10 @@ jobs:
 
     - name: Generate docs
       run: PATH="/opt/zeek/bin:/opt/zeek/bin:$PATH" make -C $GITHUB_WORKSPACE/docs
-      if: matrix.zeek == 'zeek'
 
     - name: Deploy docs
-      if: matrix.zeek == 'zeek'
       uses: JamesIves/github-pages-deploy-action@3.5.9
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: $GITHUB_WORKSPACE/docs/html
-
-    - name: Coveralls
-      if: matrix.zeek == 'zeek'
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
