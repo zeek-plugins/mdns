@@ -1,4 +1,4 @@
-##! Constants used by the mDNS plugin.
+##! Constants used by the mDNS package.
 
 module mDNS;
 

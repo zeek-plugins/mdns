@@ -19,3 +19,4 @@
 @load base/protocols/dns
 @load ./consts
 @load ./events
+@load ./main

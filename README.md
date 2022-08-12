@@ -1,7 +1,8 @@
 # Multicast DNS (mDNS) package for Zeek IDS
 
 
-This repository contains a [Zeek](https://zeek.org/) package for the [Multicast DNS (mDNS) protocol](https://en.wikipedia.org/wiki/Multicast_DNS).
+This repository contains a [Zeek](https://zeek.org/) script-only package for the [Multicast DNS (mDNS) protocol](https://en.wikipedia.org/wiki/Multicast_DNS).
+It defines new mDNS events and enables mDNS logging, both based on the built-in DNS events and logging capabilities.
 The package can be easily installed with [Zeek Package Manager](https://docs.zeek.org/projects/package-manager/en/stable/).
 
 Please consult the following RFCs for additional information about the Multicast DNS protocol:
@@ -23,39 +24,33 @@ Everything should be installed correctly if you install the latest [Zeek](https:
 
 ### Setup
 
-This package will install the `IoT::mDNS` Zeek plugin.
-
 To run unit tests and install the package, run:
 ```shell
 zkg install https://github.com/zeek-plugins/mdns  # to install as super user
 zkg --user install https://github.com/zeek-plugins/mdns  # to install in user space
 ```
 
-You might have to update the `ZEEKPATH` and `ZEEK_PLUGIN_PATH` environmental variables.
-To see which value they should take, run the following commands:
+You might have to update the `ZEEKPATH` environmental variable
+to have access to packages installed with `zkg`.
+To see which value it should take, run the following commands:
 ```shell
 zkg env         # For the super user
 zkg --user env  # For a normal user
 ```
-
-To confirm that installation was successful, you can run the following command:
-```shell
-zeek -NN | grep mDNS
-```
-
-
-If the command's output shows something similar to
-```shell
-IoT::mDNS - Multicast DNS (mDNS) package for Zeek (dynamic, version 1.0.0)
-```
-the package was correctly installed, and you have access to the mDNS package.
 
 In the case of any installation problems, please check the [Zeek Package Manager](https://docs.zeek.org/projects/package-manager/en/stable/) documentation.
 
 
 ## Usage
 
-Once the Zeek package installed, you will have access to mDNS events and logging.
+In order to use the mDNS events and activate mDNS logging,
+you must explicitly load the package inside your Zeek scripts,
+with the following directive:
+```zeek
+@load path/to/mdns/scripts
+```
+If you correctly updated the aforementioned `ZEEKPATH` variable,
+the scripts path should only be `mdns`.
 
 ### Events
 
@@ -102,22 +97,6 @@ The plugin defines the following events:
 - ``event mdns_end(c: connection, msg: dns_msg)``
   - Generated at the end of processing a mDNS packet. This event is the last ``mdns_*`` event that will be raised for a mDNS query/reply and signals that all resource records have been passed on.
 
-
-Those events are usable directly when the plugin is activated.
-If you're using Zeek in bare mode, you will need to explicitly load the plugin.
-Due to a [Zeek issue](https://github.com/zeek/zeek/issues/2311),
-you cannot load it directly from Zeek scripts, and have the two following possibilities:
-
-- Specify the plugin name, `IoT::mDNS` in command line, when running the script.
-For example:
-```shell
-zeek -b IoT::mDNS YOUR_ZEEK_SCRIPT.zeek
-```
-- Include the loading directive, `@load-plugin IoT::mDNS`, in an auxiliary Zeek script, and run this script along with your script:
-```
-zeek -b LOADING_SCRIPT.zeek YOUR_ZEEK_SCRIPT.zeek
-```
-
 For more information about the events, please consult Zeek's documentation about [DNS events](https://docs.zeek.org/en/master/scripts/base/bif/plugins/Zeek_DNS.events.bif.zeek.html), which are the unicast equivalent of this plugin's mDNS events.
 
 
@@ -155,24 +134,17 @@ This produces the `mdns.log` file, which contains, for each mDNS message seen, t
 * `rejected`: The DNS query was rejected by the server.
 
 
-To enable mDNS logging, you will have to explicitly load the package scripts in the beginning of your Zeek scripts, with the following instruction:
-```shell
-@load /path/to/mDNS/scripts
-```
-
-If you updated the `ZEEKPATH` environment variable as explained before, the path should simply be `IoT/mDNS`.
-
-
 ## License
 
-This project is licensed under the BSD license. See the [COPYING](COPYING) file for details.
+This project is licensed under the BSD license. See the [LICENSE](LICENSE) file for details.
 
 
 ## Contributors
-
 
 - François De Keersmaeker
   - GitHub: [@fdekeers](https://github.com/fdekeers>)
   - Email: francois.dekeersmaeker@uclouvain.be
 
-Thanks to the ESnet team for [Zeek Package Cookie Cutter](https://github.com/esnet/cookiecutter-zeekpackage>).
+
+Thanks to the ESnet team for [Zeek Package Cookie Cutter](https://github.com/esnet/cookiecutter-zeekpackage>),
+and to [@awelzel](https://github.com/awelzel) for his insight on Zeek script-only packages.

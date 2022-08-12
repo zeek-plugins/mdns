@@ -3,7 +3,6 @@ description = Multicast DNS (mDNS) package for Zeek
 credits = François De Keersmaeker <francois.dekeersmaeker@uclouvain.be>
 tags = IDS, Zeek, mDNS
 test_command = cd tests && make
-build_command = ./configure && make
 script_dir = ./scripts
 
 [template]
