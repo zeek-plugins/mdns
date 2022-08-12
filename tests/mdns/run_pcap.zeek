@@ -3,9 +3,7 @@
 # @TEST-EXEC: btest-diff mdns_only.out
 # @TEST-EXEC: zeek -b ${PACKAGE} %INPUT -r ${TRACES}/trace.pcap > trace.out
 # @TEST-EXEC: btest-diff trace.out
-
-# Import mDNS plugin scipts
-@load IoT/mdns
+# @TEST-EXEC: btest-diff mdns.log
 
 
 # Count of mDNS messages
