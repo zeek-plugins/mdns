@@ -4,88 +4,85 @@
 
 ########## EVENT DECLARATIONS ##########
 
-export {
+# Generated for every mDNS message.
+global mdns_message: event(c: connection, is_orig: bool, msg: dns_msg, len: count);
 
-    # Generated for every mDNS message.
-    global mdns_message: event(c: connection, is_orig: bool, msg: dns_msg, len: count);
+# Generated for every mDNS request.
+global mdns_request: event(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count, original_query: string);
 
-    # Generated for every mDNS request.
-    global mdns_request: event(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count, original_query: string);
+# Generated for mDNS replies that reject a query. This event is raised if a mDNS
+# reply indicates failure because it does not pass on any
+# answers to a query. Note that all of the event's parameters are parsed out of
+# the reply; there's no stateful correlation with the query.
+global mdns_rejected: event(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count, original_query: string);
 
-    # Generated for mDNS replies that reject a query. This event is raised if a mDNS
-    # reply indicates failure because it does not pass on any
-    # answers to a query. Note that all of the event's parameters are parsed out of
-    # the reply; there's no stateful correlation with the query.
-    global mdns_rejected: event(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count, original_query: string);
+# Generated for each entry in the Question section of a mDNS reply.
+global mdns_query_reply: event(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count, original_query: string);
 
-    # Generated for each entry in the Question section of a mDNS reply.
-    global mdns_query_reply: event(c: connection, msg: dns_msg, query: string, qtype: count, qclass: count, original_query: string);
+# Generated for mDNS replies of type A.
+global mdns_A_reply : event(c: connection, msg: dns_msg, ans: dns_answer, a: addr);
 
-    # Generated for mDNS replies of type A.
-    global mdns_A_reply : event(c: connection, msg: dns_msg, ans: dns_answer, a: addr);
+# Generated for mDNS replies of type *AAAA*. For replies with multiple answers,
+# an individual event of the corresponding type is raised for each.
+global mdns_AAAA_reply: event(c: connection, msg: dns_msg, ans: dns_answer, a: addr);
 
-    # Generated for mDNS replies of type *AAAA*. For replies with multiple answers,
-    # an individual event of the corresponding type is raised for each.
-    global mdns_AAAA_reply: event(c: connection, msg: dns_msg, ans: dns_answer, a: addr);
+# Generated for mDNS replies of type *A6*. For replies with multiple answers, an
+# individual event of the corresponding type is raised for each.
+global mdns_A6_reply: event(c: connection, msg: dns_msg, ans: dns_answer, a: addr);
 
-    # Generated for mDNS replies of type *A6*. For replies with multiple answers, an
-    # individual event of the corresponding type is raised for each.
-    global mdns_A6_reply: event(c: connection, msg: dns_msg, ans: dns_answer, a: addr);
+# Generated for mDNS replies of type *NS*. For replies with multiple answers, an
+# individual event of the corresponding type is raised for each.
+global mdns_NS_reply: event(c: connection, msg: dns_msg, ans: dns_answer, name: string);
 
-    # Generated for mDNS replies of type *NS*. For replies with multiple answers, an
-    # individual event of the corresponding type is raised for each.
-    global mdns_NS_reply: event(c: connection, msg: dns_msg, ans: dns_answer, name: string);
+# Generated for mDNS replies of type *CNAME*. For replies with multiple answers,
+# an individual event of the corresponding type is raised for each.
+global mdns_CNAME_reply: event(c: connection, msg: dns_msg, ans: dns_answer, name: string);
 
-    # Generated for mDNS replies of type *CNAME*. For replies with multiple answers,
-    # an individual event of the corresponding type is raised for each.
-    global mdns_CNAME_reply: event(c: connection, msg: dns_msg, ans: dns_answer, name: string);
+# Generated for mDNS replies of type *PTR*. For replies with multiple answers, an
+# individual event of the corresponding type is raised for each.
+global mdns_PTR_reply: event(c: connection, msg: dns_msg, ans: dns_answer, name: string);
 
-    # Generated for mDNS replies of type *PTR*. For replies with multiple answers, an
-    # individual event of the corresponding type is raised for each.
-    global mdns_PTR_reply: event(c: connection, msg: dns_msg, ans: dns_answer, name: string);
+# Generated for mDNS replies of type *SOA*. For replies with multiple answers, an
+# individual event of the corresponding type is raised for each.
+global mdns_SOA_reply: event(c: connection, msg: dns_msg, ans: dns_answer, soa: dns_soa);
 
-    # Generated for mDNS replies of type *SOA*. For replies with multiple answers, an
-    # individual event of the corresponding type is raised for each.
-    global mdns_SOA_reply: event(c: connection, msg: dns_msg, ans: dns_answer, soa: dns_soa);
+# Generated for mDNS replies of type *WKS*. For replies with multiple answers, an
+# individual event of the corresponding type is raised for each.
+global mdns_WKS_reply: event(c: connection, msg: dns_msg, ans: dns_answer);
 
-    # Generated for mDNS replies of type *WKS*. For replies with multiple answers, an
-    # individual event of the corresponding type is raised for each.
-    global mdns_WKS_reply: event(c: connection, msg: dns_msg, ans: dns_answer);
+# Generated for mDNS replies of type *HINFO*. For replies with multiple answers, an
+# individual event of the corresponding type is raised for each.
+global mdns_HINFO_reply: event(c: connection, msg: dns_msg, ans: dns_answer, cpu: string, os: string);
 
-    # Generated for mDNS replies of type *HINFO*. For replies with multiple answers, an
-    # individual event of the corresponding type is raised for each.
-    global mdns_HINFO_reply: event(c: connection, msg: dns_msg, ans: dns_answer, cpu: string, os: string);
+# Generated for mDNS replies of type *MX*. For replies with multiple answers, an
+# individual event of the corresponding type is raised for each.
+global mdns_MX_reply: event(c: connection, msg: dns_msg, ans: dns_answer, name: string, preference: count);
 
-    # Generated for mDNS replies of type *MX*. For replies with multiple answers, an
-    # individual event of the corresponding type is raised for each.
-    global mdns_MX_reply: event(c: connection, msg: dns_msg, ans: dns_answer, name: string, preference: count);
+# Generated for mDNS replies of type *TXT*. For replies with multiple answers, an
+# individual event of the corresponding type is raised for each.
+global mdns_TXT_reply: event(c: connection, msg: dns_msg, ans: dns_answer, strs: string_vec);
 
-    # Generated for mDNS replies of type *TXT*. For replies with multiple answers, an
-    # individual event of the corresponding type is raised for each.
-    global mdns_TXT_reply: event(c: connection, msg: dns_msg, ans: dns_answer, strs: string_vec);
+# Generated for mDNS replies of type *SPF*. For replies with multiple answers, an
+# individual event of the corresponding type is raised for each.
+global mdns_SPF_reply: event(c: connection, msg: dns_msg, ans: dns_answer, strs: string_vec);
 
-    # Generated for mDNS replies of type *SPF*. For replies with multiple answers, an
-    # individual event of the corresponding type is raised for each.
-    global mdns_SPF_reply: event(c: connection, msg: dns_msg, ans: dns_answer, strs: string_vec);
+# Generated for mDNS replies of type *CAA*. For replies with multiple answers, an
+# individual event of the corresponding type is raised for each.
+global mdns_CAA_reply: event(c: connection, msg: dns_msg, ans: dns_answer, flags: count, tag: string, value: string);
 
-    # Generated for mDNS replies of type *CAA*. For replies with multiple answers, an
-    # individual event of the corresponding type is raised for each.
-    global mdns_CAA_reply: event(c: connection, msg: dns_msg, ans: dns_answer, flags: count, tag: string, value: string);
+# Generated for mDNS replies of type *SRV*. For replies with multiple answers, an
+# individual event of the corresponding type is raised for each.
+global mdns_SRV_reply: event(c: connection, msg: dns_msg, ans: dns_answer, target: string, priority: count, weight: count, p: count);
 
-    # Generated for mDNS replies of type *SRV*. For replies with multiple answers, an
-    # individual event of the corresponding type is raised for each.
-    global mdns_SRV_reply: event(c: connection, msg: dns_msg, ans: dns_answer, target: string, priority: count, weight: count, p: count);
+# Generated on mDNS reply resource records when the type of record is not one
+# that Zeek knows how to parse and generate another more specific event.
+global mdns_unknown_reply: event(c: connection, msg: dns_msg, ans: dns_answer);
 
-    # Generated on mDNS reply resource records when the type of record is not one
-    # that Zeek knows how to parse and generate another more specific event.
-    global mdns_unknown_reply: event(c: connection, msg: dns_msg, ans: dns_answer);
+# Generated at the end of processing a mDNS packet. This event is the last
+# ``mdns_*`` event that will be raised for a mDNS query/reply and signals that
+# all resource records have been passed on.
+global mdns_end: event(c: connection, msg: dns_msg);
 
-    # Generated at the end of processing a mDNS packet. This event is the last
-    # ``mdns_*`` event that will be raised for a mDNS query/reply and signals that
-    # all resource records have been passed on.
-    global mdns_end: event(c: connection, msg: dns_msg);
-
-}
 
 ########## FUNCTIONS ##########
 
